@@ -12,7 +12,9 @@ public class DiceSimulator {
                 count[roll-1]++;
             }
             for(int i = 0; i<=5;i++) {
-                System.out.println((i+1) + " appeared " + count[i]+" times");
+                double probability = (count[i]/100.0) *100; 
+               System.out.printf("%d appeared %d times Probability: %.2f%%%n",i + 1, count[i], probability);
+
             }
     }
 }
