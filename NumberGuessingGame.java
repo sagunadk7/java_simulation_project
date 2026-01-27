@@ -13,12 +13,14 @@ public class NumberGuessingGame {
             int playerGuess = sc.nextInt();
             if((playerGuess<=0) || (playerGuess>100)) {
                 System.out.println("Invalid guess! Enter a number between 1 and 100.");
+                attemptCount++;
                 continue;
             }
             if(playerGuess==secretNumber) {
                 System.out.println("Your guess is correct!!\n");
-                System.out.printf("Your attempt: %d.",attemptCount);
-                break;
+                System.out.printf("Your attempt: %d.\n",attemptCount);
+                sc.close();
+                return;
             } 
             else{
                 System.out.println((playerGuess>secretNumber)?"Your guess is too High":"Your guess is too Low.");
