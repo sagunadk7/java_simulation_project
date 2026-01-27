@@ -6,15 +6,17 @@ public class DiceSimulator {
         return randomValue;
     } 
     static String checkWinner(int userWin,int computerWin) {
-        return (userWin>computerWin)?"Congratulation!! You Won!!" : "You loose!!";
+        if (userWin>computerWin) return "Congratulations! You won!";
+        if (computerWin>userWin) return "You lost!";
+        return "It's a draw";
     }
     public static void main(String[] args) {
             int [] count = new int [6];
 
-            int round = 5;
+            int rounds = 100;
             int userWin = 0;
             int computerWin=0;
-            for(int i = 0; i<=round; i++) {
+            for(int i = 0; i<rounds; i++) {
                 int userRoll = rollDice();
                 int computerRoll = rollDice();
                 if(userRoll>computerRoll) {
@@ -25,8 +27,9 @@ public class DiceSimulator {
                 count[userRoll-1]++;
                 count[computerRoll-1]++;
             }
-            for(int i = 0; i<=round;i++) {
-                double probability = (count[i]/100.0) *100; 
+            int totalRolls = 2* rounds;
+            for(int i = 0; i<count.length;i++) {
+                double probability = (count[i]*100.0) / totalRolls; 
                System.out.printf("%d appeared %d times Probability: %.2f%%%n",i + 1, count[i], probability);
 
             }
