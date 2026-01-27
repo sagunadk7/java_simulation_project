@@ -41,18 +41,22 @@ public class CoinTossSimulation {
         int head = 0, tail = 0;
 
         for (int i = 0; i < tosses; i++) {
-            if (tossCoin() == 0) {
+            int tossed = tossCoin();
+            if (tossed == 0) {
                 head++;
             } else {
                 tail++;
             }
         }
-
+        double headProbability = (head*100.0) / tosses;
+        double tailProbability = (tail*100.0) / tosses;
         sc.close();
-
         System.out.println("Total Heads: " + head);
         System.out.println("Total Tails: " + tail);
-
         checkResult(userChoice, head, tail);
+        System.out.println("After "+ tosses + " tosses: ");
+        System.out.printf("Heads: %d, Probability: %.2f%%%n",head,headProbability);
+        System.out.printf("Tails: %d, Probability: %.2f%%%n",tail,tailProbability);
+
     }
 }
