@@ -1,0 +1,3 @@
+enum BookState {
+    AVAILABLE,BORROWED
+        }
