@@ -21,7 +21,7 @@ class Seat {
         status = SeatStatus.AVAILABLE;
         return true;
     }
-    boolean isAvailable(){
+        boolean isAvailable(){
         return status == SeatStatus.AVAILABLE;
     }
 }

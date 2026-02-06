@@ -96,7 +96,7 @@ class Library{
         System.out.println("Total Book: "+totalBooks);
         System.out.println("Total Borrowed Books: "+totalBorrowedBooks);
         System.out.println("Total Available Books: "+totalAvailableBooks);
-        System.out.println("Total Faile Attempts: "+totalFailedAttempts);
+        System.out.println("Total Fail Attempts: "+totalFailedAttempts);
         System.out.println("---------------------------------------");
         System.out.println();
 
